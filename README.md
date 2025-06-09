@@ -61,7 +61,7 @@ curl \
 ```
 
 ## Iroha Java SDK that Support Vault
-Please add this `iroha-java` sdk dependency in order for testing integration poc:
+Please add this `iroha-java` sdk dependency in `build.gradle.kts` in order for testing integration poc:
 ```
 repositories {
     // Other repositories
