@@ -2,7 +2,7 @@
 
 This repository explains how to use HashiCorp Vault with a customized `transit` secrets engine to support `ed25519sha3` key generation and signing.
 
-Please refer to the source code for the implementation details at [soramitsukhmer-lab/vault#ed25519sha3](https://github.com/soramitsukhmer-lab/vault/tree/ed25519sha3) and [soramitsukhmer-lab/go-ed25519sha3](https://github.com/soramitsukhmer-lab/go-ed25519sha3).
+Please refer to the source code for the implementation details at [soramitsukhmer-lab/vault#builtin/logical/transit/ed25519sha3](https://github.com/soramitsukhmer-lab/vault/tree/builtin/logical/transit/ed25519sha3) and [soramitsukhmer-lab/go-ed25519sha3](https://github.com/soramitsukhmer-lab/go-ed25519sha3).
 
 ## Starting Vault
 
