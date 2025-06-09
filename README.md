@@ -2,7 +2,7 @@
 
 This repository explains how to use HashiCorp Vault with a customized `transit` secrets engine to support `ed25519sha3` key generation and signing.
 
-Please refer to the source code for the implementation details at [soramitsukhmer-lab/vault#ed25519sha3](https://github.com/soramitsukhmer-lab/vault/tree/ed25519sha3).
+Please refer to the source code for the implementation details at [soramitsukhmer-lab/vault#ed25519sha3](https://github.com/soramitsukhmer-lab/vault/tree/ed25519sha3) and [soramitsukhmer-lab/go-ed25519sha3](https://github.com/soramitsukhmer-lab/go-ed25519sha3).
 
 ## Starting Vault
 
@@ -16,6 +16,8 @@ Setup the Vault environment variables to point to the running Vault server:
 export VAULT_ADDR=http://localhost:8200
 export VAULT_TOKEN=toor
 ```
+
+Source for the container image can be found at [soramitsukhmer-lab/docker-vault](https://github.com/soramitsukhmer-lab/docker-vault).
 
 ## How to use the `transit` secrets engine
 
