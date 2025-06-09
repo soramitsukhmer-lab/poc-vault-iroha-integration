@@ -59,3 +59,26 @@ curl \
     --data "${payload}" \
     http://127.0.0.1:8200/v1/transit/verify/iroha
 ```
+
+## Iroha Java SDK that Support Vault
+Please add this `iroha-java` sdk dependency in order for testing integration poc:
+```
+repositories {
+    // Other repositories
+    maven {
+        name = "GitHubSoramitsuKhmerApacheMavenPackages"
+        url = uri("https://maven.pkg.github.com/soramitsukhmer/*")
+        credentials {
+            username = System.getenv("GIT_PUBLISH_USER")
+            password = System.getenv("GIT_PUBLISH_PASSWORD")
+        }
+    }
+    // Other repositories
+}
+dependencies {
+    // Other dependencies
+    implementation("com.soramitsukhmer.iroha-java:client:7.0.1-rc.4")
+    // Other dependencies
+}
+```
+Please check sdk dependency repository can be found at [soramitsukhmer/iroha-java](https://github.com/soramitsukhmer/iroha-java)
