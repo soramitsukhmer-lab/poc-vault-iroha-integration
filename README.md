@@ -8,7 +8,7 @@ Please refer to the source code for the implementation details at [soramitsukhme
 
 Start a Vault server in development mode using Docker. This will run Vault in a single process with an in-memory storage backend, suitable for testing and development purposes.
 ```bash
-docker run --rm -it -p 8200:8200 soramitsukhmer-lab/vault:dev server -dev -dev-root-token-id=toor
+docker run --rm -it -p 8200:8200 harbor.sorakh.io/soramitsukhmer-lab/vault:dev server -dev -dev-root-token-id=toor
 ```
 
 Setup the Vault environment variables to point to the running Vault server:
