@@ -13,8 +13,8 @@ The only different is `iroha-transit` implemented `ed25519-sha3-512` key type, w
 
 ```bash
 # Enable the transit secrets engine and create a key
-vault secrets enable transit
-vault write transit/keys/iroha type=ed25519-sha3-512
+vault secrets enable iroha-transit
+vault write iroha-transit/keys/iroha type=ed25519-sha3-512
 ```
 
 ## Starting Vault
