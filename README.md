@@ -4,6 +4,19 @@ This repository explains how to use HashiCorp Vault with a customized `transit` 
 
 Please refer to the source code for the implementation details at [soramitsukhmer-lab/vault#builtin/logical/transit/ed25519sha3](https://github.com/soramitsukhmer-lab/vault/tree/builtin/logical/transit/ed25519sha3) and [soramitsukhmer-lab/go-ed25519sha3](https://github.com/soramitsukhmer-lab/go-ed25519sha3).
 
+## Documentation
+
+The official `transit` secret engine and `iroha-transit` secret engine is not that different from each other. You can follow the official [Transit secrets engine (API)
+](https://developer.hashicorp.com/vault/api-docs/secret/transit#transit-secrets-engine-api) documentation to implementing features for  `iroha-transit` secret engine.
+
+The only different is `iroha-transit` implemented `ed25519-sha3-512` key type, while the official one only support `ed25519`.
+
+```bash
+# Enable the transit secrets engine and create a key
+vault secrets enable transit
+vault write transit/keys/iroha type=ed25519-sha3-512
+```
+
 ## Starting Vault
 
 Start a Vault server in development mode using Docker. This will run Vault in a single process with an in-memory storage backend, suitable for testing and development purposes.
@@ -26,7 +39,7 @@ Enable the `transit` secrets engine and create a key named `iroha` with the `ed2
 ```bash
 # Enable the transit secrets engine and create a key
 vault secrets enable transit
-vault write transit/keys/iroha type=ed25519-sha3-512 exportable=true
+vault write transit/keys/iroha type=ed25519-sha3-512
 
 # Export the public key
 vault read -format=json transit/export/public-key/iroha
