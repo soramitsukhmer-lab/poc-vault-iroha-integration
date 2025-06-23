@@ -11,7 +11,7 @@ docker compose up -d
 Then you can access the shell container to manage the Vault plugin catalog:
 
 ```bash
-docker exec -it os-shell /bin/bash
+docker compose exec shell /bin/bash
 
 # Once inside the shell, the following commands can be used to manage the Vault plugin catalog:
 
