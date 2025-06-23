@@ -1,0 +1,26 @@
+services:
+  vault:
+    image: hashicorp/vault:1.17
+    command: server -dev -dev-root-token-id=toor
+    environment:
+      VAULT_ADDR: http://localhost:8200
+      VAULT_TOKEN: toor
+      VAULT_LOCAL_CONFIG: |
+        plugin_directory = "/vault/plugins"
+    ports:
+      - "8200:8200"
+    volumes:
+      - file:/vault/file
+      - plugins:/vault/plugins
+    cap_add:
+      - IPC_LOCK
+  
+  shell:
+    image: harbor.sorakh.io/soramitsukhmer-lab/os-shell:latest
+    command: sleep infinitely
+    volumes:
+      - plugins:/vault/plugins
+
+volumes:
+  file:
+  plugins:
