@@ -34,7 +34,7 @@ Source for the container image can be found at [soramitsukhmer-lab/docker-vault]
 
 ## How to use the `transit` secrets engine
 
-Enable the `transit` secrets engine and create a key named `iroha` with the `ed25519-sha3-512` type. The key will be exportable, allowing you to retrieve the public key for use in signing and verification operations.
+Enable the `iroha-transit` secrets engine and create a key named `iroha` with the `ed25519-sha3-512` type. The key will be exportable, allowing you to retrieve the public key for use in signing and verification operations.
 
 ```bash
 # Enable the transit secrets engine and create a key
