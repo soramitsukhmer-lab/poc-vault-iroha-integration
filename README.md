@@ -38,13 +38,13 @@ Enable the `transit` secrets engine and create a key named `iroha` with the `ed2
 
 ```bash
 # Enable the transit secrets engine and create a key
-vault secrets enable transit
-vault write transit/keys/iroha type=ed25519-sha3-512
+vault secrets enable iroha-transit
+vault write iroha-transit/keys/iroha type=ed25519-sha3-512
 
 # Export the public key
-vault read -format=json transit/export/public-key/iroha
+vault read -format=json iroha-transit/export/public-key/iroha
 # or
-vault read -format=json transit/export/public-key/iroha  | jq -r '.data.keys["1"]'
+vault read -format=json iroha-transit/export/public-key/iroha  | jq -r '.data.keys["1"]'
 ```
 
 Signing and verification can be done using the following commands:
@@ -57,7 +57,7 @@ curl \
     --header "X-Vault-Token: toor" \
     --request POST \
     --data "${payload}" \
-    http://127.0.0.1:8200/v1/transit/sign/iroha
+    http://127.0.0.1:8200/v1/iroha-transit/sign/iroha
 ```
 
 ```bash
@@ -70,7 +70,7 @@ curl \
     --header "X-Vault-Token: toor" \
     --request POST \
     --data "${payload}" \
-    http://127.0.0.1:8200/v1/transit/verify/iroha
+    http://127.0.0.1:8200/v1/iroha-transit/verify/iroha
 ```
 
 ## Iroha Java SDK that Support Vault
