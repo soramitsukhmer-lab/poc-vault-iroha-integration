@@ -30,7 +30,7 @@ export VAULT_ADDR=http://localhost:8200
 export VAULT_TOKEN=toor
 ```
 
-Source for the container image can be found at [soramitsukhmer-lab/docker-vault](https://github.com/soramitsukhmer-lab/docker-vault).
+Source for the container image can be found at [soramitsukhmer-lab/docker-hashicorp](https://github.com/soramitsukhmer-lab/docker-hashicorp).
 
 ## How to use the `iroha-transit` secrets engine
 
