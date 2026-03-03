@@ -21,7 +21,7 @@ vault write iroha-transit/keys/iroha type=ed25519-sha3-512
 
 Start a Vault server in development mode using Docker. This will run Vault in a single process with an in-memory storage backend, suitable for testing and development purposes.
 ```bash
-docker run --rm -it -p 8200:8200 harbor.sorakh.io/soramitsukhmer-lab/vault:dev server -dev -dev-root-token-id=toor
+docker run --rm -it -e VAULT_ADDR=http://127.0.0.1:8200 -e VAULT_TOKEN=toor -e VAULT_DEV_ROOT_TOKEN_ID=toor -e VAULT_LOCAL_CONFIG='plugin_directory="/vault/plugins"' -p 8200:8200 ghcr.io/soramitsukhmer-lab/vault:latest
 ```
 
 Setup the Vault environment variables to point to the running Vault server:
